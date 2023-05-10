@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { BsSearch } from "react-icons/bs"
 import Card from "../components/Card"
+import { SearchFilterStyle } from "../styles/SearchFilterStyle"
+import { CountriesStyle } from "../styles/CountriesStyle"
 
 
 const Countries = () => {
@@ -26,8 +28,8 @@ const Countries = () => {
 
 
     return (
-        <>
-            <div>
+        <main>
+            <SearchFilterStyle>
                 <div>
                     <BsSearch />
                     <input 
@@ -41,8 +43,8 @@ const Countries = () => {
                     <option value="">Filter by Region</option>
                     {regionList.map((region) => <option value={region} key={region}>{region}</option>)}
                 </select>
-            </div>
-            <div>
+            </SearchFilterStyle>
+            <CountriesStyle>
                 {filteredCountries.map(country => {
                     const {capital, name, population, region, flags, cca3 } = country
                     return <Link to={`/details/${cca3}`} key={cca3}>
@@ -56,8 +58,8 @@ const Countries = () => {
                         />
                     </Link>
                 })}
-            </div>
-        </>
+            </CountriesStyle>
+        </main>
     )
 }
 

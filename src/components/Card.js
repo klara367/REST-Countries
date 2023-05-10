@@ -1,6 +1,8 @@
+import { CardStyle } from "../styles/CardStyle"
+
 const Card = ({ region, name, population, capital, flags }) => {
     return (
-        <article> 
+        <CardStyle> 
         <img src={flags.png} alt={flags.alt} height={"163px"} />
         <div>
                 <p>{name.common}</p>
@@ -8,7 +10,7 @@ const Card = ({ region, name, population, capital, flags }) => {
                 <p><span>Region: </span>{region}</p>
                 <p><span>Capital: </span>{capital}</p>
         </div>
-    </article>
+    </CardStyle>
     )
 }
 

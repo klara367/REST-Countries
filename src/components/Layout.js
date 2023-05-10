@@ -1,15 +1,26 @@
+import { useState } from "react"
 import { Outlet } from "react-router-dom"
+import { ThemeProvider } from "styled-components"
+import { GlobalStyle, lightTheme, darkTheme } from "../styles/GlobalStyle"
+import { HiOutlineMoon } from "react-icons/hi"
+import { HeaderStyle } from "../styles/HeaderStyle"
 
 const Layout = () => {
+    const [activeTheme, setActiveTheme] = useState(lightTheme)
+
+    const switchTheme = () => {
+        activeTheme === lightTheme ? setActiveTheme(darkTheme) : setActiveTheme(lightTheme)
+    }
 
     return (
-
-            <header>
+        <ThemeProvider theme={activeTheme}>
+            <GlobalStyle />
+            <HeaderStyle>
                 <h1>Where in the world?</h1>
-                <button>Dark Mode</button>
-                <Outlet />
-            </header>
-
+                <button onClick={switchTheme}><HiOutlineMoon />Dark Mode</button>
+            </HeaderStyle>
+            <Outlet />
+        </ThemeProvider>
     )
 }
 

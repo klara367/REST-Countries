@@ -1,10 +1,15 @@
+import { BackBtnStyle } from "../styles/BackBtnStyle"
+import { ErrorStyle } from "../styles/ErrorStyle"
+
 const Error = () => {
     return (
-        <>
-            <p>Page not found</p>
-            <h2>404</h2>
-            <button>Back to homepage</button>
-        </>
+        <ErrorStyle>
+            <div>
+                <p>Page not found</p>
+                <h2>404</h2>
+                <BackBtnStyle to={"/"}>Back to homepage</BackBtnStyle>
+            </div>
+        </ErrorStyle>
     )
 }
 

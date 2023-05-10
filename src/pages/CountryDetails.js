@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { HiOutlineArrowLeft } from "react-icons/hi"
+import { BackBtnStyle, BtnWrapperStyle } from "../styles/BackBtnStyle"
+import { BorderBtnsStyle, BorderCountriesWrapperStyle, CountryDetailsStyle, FlexInfoStyle, ShowDetailsStyle } from "../styles/CountryDetailsStyle"
 
 const CountryDetails = () => {
     const [countries, setCountries] = useState([])
@@ -22,18 +24,18 @@ const CountryDetails = () => {
 
 
     return(
-        <>
-            <div>
-                <Link to={"/"}><HiOutlineArrowLeft />Back</Link>
-            </div>
+        <main>
+            <BtnWrapperStyle>
+                <BackBtnStyle to={"/"}><HiOutlineArrowLeft />Back</BackBtnStyle>
+            </BtnWrapperStyle>
 
-            <div>
+            <CountryDetailsStyle>
                 {isLoaded ? 
-                    <div>
+                    <ShowDetailsStyle>
                         <img src={country.flags.svg} alt={country.flags.alt} />
                         <div>
                             <h2>{country.name.common}</h2>
-                            <div>
+                            <FlexInfoStyle>
                                 <div>
                                     <p><span>Native name: </span>{country.name.nativeName[Object.keys(country.name.nativeName)[0]].official}</p>
                                     <p><span>Population: </span>{country.population.toLocaleString()}</p>
@@ -46,16 +48,16 @@ const CountryDetails = () => {
                                     <p><span>Currencies: </span>{Object.values(country.currencies)[0].name}</p>
                                     <p><span>Languages: </span>{Object.values(country.languages).join(", ")}</p>
                                 </div>
-                            </div>
-                            <div>
-                                <p><span>Border countries: </span></p>
-                                <ul>{country.borders ? country.borders.map(border => <li key={border}><Link to={`/details/${border}`}>{border}</Link></li>) : <p>No border countries</p>}</ul>
-                            </div>
+                            </FlexInfoStyle>
+                            <BorderCountriesWrapperStyle>
+                                <p><span>Border&nbsp;countries: </span></p>
+                                <ul>{country.borders ? country.borders.map(border => <li key={border}><BorderBtnsStyle to={`/details/${border}`}>{border}</BorderBtnsStyle></li>) : <p>No border countries</p>}</ul>
+                            </BorderCountriesWrapperStyle>
                         </div>
-                    </div>
+                    </ShowDetailsStyle>
                 : <p>Loading details...</p>}
-            </div>
-        </>
+            </CountryDetailsStyle>
+        </main>
     )
 }
 
