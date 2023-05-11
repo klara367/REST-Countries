@@ -8,7 +8,7 @@ export const HeaderStyle = styled.header`
     background-color: ${(props) => props.theme.secondary};
 
     @media only screen and (max-width: 768px) {
-        padding: 1.5rem;
+        padding: 2rem;
     }
     
 

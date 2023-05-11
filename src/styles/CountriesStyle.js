@@ -8,7 +8,6 @@ export const CountriesStyle = styled.div`
     background-color: ${(props) => props.theme.primary};
     font-size: 14px;
     font-weight: 300;
-    padding-bottom: 2rem;
 
     @media only screen and (max-width: 768px) {
         gap: 2rem;

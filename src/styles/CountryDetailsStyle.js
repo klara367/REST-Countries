@@ -2,8 +2,6 @@ import styled from "styled-components"
 import { Link } from "react-router-dom"
 
 export const CountryDetailsStyle = styled.div`
-    padding: 0 2rem 2.5rem 3rem;
-
     span {
         font-weight: 600;
     }
@@ -16,10 +14,6 @@ export const CountryDetailsStyle = styled.div`
             text-align: center;
         }
     }
-
-    // @media only screen and (max-width: 1023px) {
-    //     padding: 0 1.5rem 3rem 1.5rem;
-    // }
 `
 
 export const ShowDetailsStyle = styled.div`
@@ -33,14 +27,12 @@ export const ShowDetailsStyle = styled.div`
     }
 
     img {
-        object-fit: cover;
         width: 550px; 
         height: 350px;
 
         @media only screen and (max-width: 768px) {
             max-width: 100%;
             height: inherit;
-            object-fit: contain;
         }
     }
 `
@@ -52,12 +44,12 @@ export const FlexInfoStyle = styled.div`
 
     @media only screen and (max-width: 1279px) {
         flex-direction: column;
-        justify-content: center;
         gap: 1rem;
     }
 
     @media only screen and (max-width: 1024px) and (min-width: 768px) {
         flex-direction: row;
+        justify-content: center;
         gap: 5rem;
     }
 `
@@ -71,6 +63,10 @@ export const BorderCountriesWrapperStyle = styled.div`
         display: flex;
         gap: 2rem;
         flex-wrap: wrap;
+    }
+
+    @media only screen and (max-width: 768px) {
+        flex-wrap: wrap;   
     }
 `
 

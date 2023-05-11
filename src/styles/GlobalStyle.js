@@ -14,6 +14,15 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${(props) => props.theme.primary};
     }
 
+    main {
+        padding-inline: 3rem;
+        padding-bottom: 2.5rem;
+
+        @media only screen and (max-width: 768px) {
+            padding-inline: 2rem;
+        }
+    }
+
     li {
         list-style-type: none;
     }

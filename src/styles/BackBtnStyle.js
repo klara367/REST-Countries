@@ -22,11 +22,11 @@ export const BackBtnStyle = styled(Link)`
 `
 
 export const BtnWrapperStyle = styled.div`
-    padding: 4.5rem 3rem;
-    width: 13rem;
+    padding-block: 4.5rem;
+    width: 8.5rem;
 
     @media only screen and (max-width: 768px) {
-        padding: 3rem 1.5rem;
-        width: 10rem;
+        padding-block: 3rem;
+        width: 7rem;
     }
 `
