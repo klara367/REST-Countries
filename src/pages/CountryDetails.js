@@ -1,22 +1,13 @@
-import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { HiOutlineArrowLeft } from "react-icons/hi"
 import { BackBtnStyle, BtnWrapperStyle } from "../styles/BackBtnStyle"
 import { BorderBtnsStyle, BorderCountriesWrapperStyle, CountryDetailsStyle, FlexInfoStyle, ShowDetailsStyle } from "../styles/CountryDetailsStyle"
+import useFetch from "../hooks/useFetch"
+
+const url = "https://restcountries.com/v3.1/all"
 
 const CountryDetails = () => {
-    const [countries, setCountries] = useState([])
-    const [isLoaded, setIsLoaded] = useState(false)
-
-    useEffect(() => {
-        fetch("https://restcountries.com/v3.1/all")
-        .then(res => res.json())
-        .then(data => {
-            setCountries(data)
-            setIsLoaded(true)
-        })
-        .catch(err => console.log(err.message))
-    }, [])
+    const { loading, countries } = useFetch(url)
 
     let { cca3 } = useParams()
 
@@ -28,10 +19,10 @@ const CountryDetails = () => {
             <BtnWrapperStyle>
                 <BackBtnStyle to={"/"}><HiOutlineArrowLeft />Back</BackBtnStyle>
             </BtnWrapperStyle>
-
             <CountryDetailsStyle>
-                {isLoaded ? 
-                    <ShowDetailsStyle>
+                {loading ? 
+                    <p>Loading details...</p>
+                    : <ShowDetailsStyle>
                         <img src={country.flags.svg} alt={country.flags.alt} />
                         <div>
                             <h2>{country.name.common}</h2>
@@ -55,7 +46,7 @@ const CountryDetails = () => {
                             </BorderCountriesWrapperStyle>
                         </div>
                     </ShowDetailsStyle>
-                : <p>Loading details...</p>}
+                }
             </CountryDetailsStyle>
         </main>
     )
