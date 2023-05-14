@@ -5,12 +5,8 @@ import { BorderBtnsStyle, BorderCountriesWrapperStyle, CountryDetailsStyle, Flex
 import useFetch from "../hooks/useFetch"
 
 const url = "https://restcountries.com/v3.1/all"
-import useFetch from "../hooks/useFetch"
-
-const url = "https://restcountries.com/v3.1/all"
 
 const CountryDetails = () => {
-    const { loading, countries } = useFetch(url)
     const { loading, countries } = useFetch(url)
 
     let { cca3 } = useParams()
@@ -50,7 +46,6 @@ const CountryDetails = () => {
                             </BorderCountriesWrapperStyle>
                         </div>
                     </ShowDetailsStyle>
-                }
                 }
             </CountryDetailsStyle>
         </main>
