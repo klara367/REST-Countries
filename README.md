@@ -23,15 +23,18 @@ Users should be able to:
 - Toggle the color scheme between light and dark mode *(optional)*
 
 
-### Screenshot
+### Screenshots
 
-![]()
+![](./screenshots/screenshot-desktop-light.png)
+![](./screenshots/screenshot-desktop-dark.png)
+![](./screenshots/country-details-light.png)
+![](./screenshots/country-details-dark.png)
 
 
 ### Links
 
-- Solution URL: [Repository]()
-- Live Site URL: [Site]()
+- Solution URL: [https://github.com/klara367/REST-Countries](https://github.com/klara367/REST-Countries)
+- Live Site URL: [https://klara367-rest-countries-api.netlify.app/](https://klara367-rest-countries-api.netlify.app/)
 
 
 ### Built with
