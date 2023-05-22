@@ -25,13 +25,16 @@ Users should be able to:
 
 ### Screenshot
 
-![]()
+![](./screenshots/screenshot-desktop-light.png)
+![](./screenshots/screenshot-desktop-dark.png)
+![](./screenshots/country-details-light.png)
+![](./screenshots/country-details-dark.png)
 
 
 ### Links
 
-- Solution URL: [Repository]()
-- Live Site URL: [Site]()
+- Solution URL: [Repository](https://github.com/klara367/REST-Countries)
+- Live Site URL: [Site](https://klara367-rest-countries-api.netlify.app/)
 
 
 ### Built with
